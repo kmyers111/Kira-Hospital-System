@@ -1,0 +1,134 @@
+.patient-profile-header {
+  display: flex;
+  min-height: 88px;
+  align-items: center;
+  gap: 24px;
+  padding: 14px clamp(20px, 4vw, 64px);
+}
+
+.patient-profile-header .portal-button {
+  flex: 0 0 auto;
+  text-decoration: none;
+}
+
+.patient-profile-content {
+  display: grid;
+  gap: 28px;
+}
+
+.patient-profile-section {
+  padding: 24px;
+  border: 1px solid #f3c7d9;
+  background: #fffafd;
+}
+
+.patient-profile-section h2 {
+  margin: 0 0 20px;
+  color: #42343c;
+  font-size: 1.5rem;
+}
+
+.patient-profile-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.patient-profile-title h2 {
+  margin: 0;
+}
+
+.patient-update-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.patient-update-form label {
+  display: grid;
+  gap: 6px;
+  font-weight: 600;
+}
+
+.patient-update-form input,
+.patient-update-form select,
+.patient-update-form textarea {
+  width: 100%;
+  min-height: 42px;
+  padding: 8px 10px;
+  border: 1px solid #e7d5de;
+  border-radius: 0;
+  background: #fff;
+  color: #42343c;
+  font: inherit;
+}
+
+.patient-update-form textarea {
+  resize: vertical;
+}
+
+.patient-update-form input:focus-visible,
+.patient-update-form select:focus-visible,
+.patient-update-form textarea:focus-visible {
+  outline: 3px solid #d86f9e;
+  outline-offset: 2px;
+}
+
+.patient-update-notes,
+.patient-update-error,
+.patient-update-actions {
+  grid-column: 1 / -1;
+}
+
+.patient-update-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.patient-notes {
+  grid-column: 1 / -1;
+}
+
+.patient-document-upload {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
+.patient-document-upload input {
+  min-width: 0;
+  flex: 1;
+}
+
+@media (max-width: 600px) {
+  .patient-profile-header {
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .patient-profile-header .portal-brand {
+    font-size: 1.5rem;
+  }
+
+  .patient-profile-section {
+    padding: 16px;
+  }
+
+  .patient-profile-title {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .patient-update-form {
+    grid-template-columns: 1fr;
+  }
+
+  .patient-update-notes,
+  .patient-update-error,
+  .patient-update-actions {
+    grid-column: auto;
+  }
+}

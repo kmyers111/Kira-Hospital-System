@@ -1,0 +1,129 @@
+.popup-trigger,
+.auth-cancel {
+  min-width: 120px;
+  padding: 11px 22px;
+  border: 0;
+  border-radius: 0;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.popup-trigger {
+  background: #f3a6c7;
+  color: #542f41;
+}
+
+.popup-trigger:hover:not(:disabled) {
+  background: #ed8fb8;
+}
+
+.popup-trigger:focus-visible,
+.auth-cancel:focus-visible,
+.auth-dialog-close:focus-visible,
+.auth-form input:focus-visible {
+  outline: 3px solid #d86f9e;
+  outline-offset: 3px;
+}
+
+.popup-trigger:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
+
+.auth-dialog {
+  width: min(440px, calc(100% - 32px));
+  max-height: min(680px, calc(100% - 32px));
+  padding: 28px;
+  overflow: auto;
+  border: 1px solid #f3c7d9;
+  border-radius: 16px;
+  background: #fff;
+  color: #42343c;
+  box-shadow: 0 20px 60px rgb(66 52 60 / 20%);
+}
+
+.auth-dialog::backdrop {
+  background: rgb(66 52 60 / 40%);
+  backdrop-filter: blur(2px);
+}
+
+.auth-dialog-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 22px;
+}
+
+.auth-dialog-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.auth-dialog-close {
+  width: 36px;
+  height: 36px;
+  border: 0;
+  border-radius: 0;
+  background: #fff4f8;
+  color: #542f41;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.auth-form {
+  display: grid;
+  gap: 16px;
+}
+
+.auth-form label {
+  display: grid;
+  gap: 6px;
+  color: #5e4d56;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-align: left;
+}
+
+.auth-form input {
+  width: 100%;
+  padding: 11px 12px;
+  border: 1px solid #e7d5de;
+  border-radius: 8px;
+  background: #fff;
+  color: #42343c;
+  font: inherit;
+}
+
+.auth-form input:focus-visible {
+  border-color: #d86f9e;
+}
+
+.auth-error {
+  margin: 0;
+  color: #a52e53;
+  font-size: 0.9rem;
+  text-align: left;
+}
+
+.auth-dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.auth-cancel {
+  background: #fff4f8;
+  color: #542f41;
+}
+
+.auth-cancel:hover {
+  background: #fbe4ee;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .auth-dialog::backdrop {
+    backdrop-filter: none;
+  }
+}

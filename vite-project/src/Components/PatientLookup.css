@@ -1,0 +1,254 @@
+.portal-page {
+  min-height: 100svh;
+  background: #fff;
+  color: #42343c;
+}
+
+.portal-header {
+  position: relative;
+  z-index: 1;
+  border-bottom: 1px solid #f3c7d9;
+  background: #fffafd;
+  box-shadow: 0 2px 8px rgb(66 52 60 / 6%);
+}
+
+.portal-header-main {
+  display: flex;
+  min-height: 88px;
+  align-items: center;
+  gap: clamp(16px, 3vw, 40px);
+  padding: 14px clamp(20px, 4vw, 64px);
+}
+
+.portal-brand {
+  flex: 0 0 auto;
+  margin: 0;
+  color: #42343c;
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-weight: 600;
+  letter-spacing: -0.04em;
+}
+
+.portal-tabs {
+  display: flex;
+  align-self: stretch;
+  align-items: center;
+}
+
+.portal-tab {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  padding: 0 8px;
+  border-bottom: 3px solid #e879a8;
+  color: #542f41;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.portal-profile {
+  position: relative;
+  margin-left: auto;
+}
+
+.portal-button {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 22px;
+  border: 0;
+  border-radius: 0;
+  background: #f3a6c7;
+  color: #542f41;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 160ms ease, transform 160ms ease;
+}
+
+.portal-button:hover:not(:disabled) {
+  background: #ed8fb8;
+  transform: translateY(-1px);
+}
+
+.portal-button:focus-visible,
+.patient-search-input:focus-visible {
+  outline: 3px solid #d86f9e;
+  outline-offset: 3px;
+}
+
+.portal-button:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
+
+.profile-popover {
+  position: absolute;
+  top: calc(100% + 12px);
+  right: 0;
+  width: min(340px, calc(100vw - 32px));
+  padding: 20px;
+  border: 1px solid #f3c7d9;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 12px 32px rgb(66 52 60 / 16%);
+}
+
+.profile-details,
+.health-record-details {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+}
+
+.profile-details div,
+.health-record-details div {
+  min-width: 0;
+}
+
+.profile-details dt,
+.health-record-details dt {
+  color: #846b78;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.profile-details dd,
+.health-record-details dd {
+  margin: 2px 0 0;
+  overflow-wrap: anywhere;
+}
+
+.profile-logout-button {
+  width: 100%;
+  margin-top: 16px;
+}
+
+.portal-content {
+  width: min(100% - 48px, 1200px);
+  margin: 36px auto;
+}
+
+.patient-search-input {
+  width: 100%;
+  min-width: 0;
+  min-height: 54px;
+  padding: 12px 18px;
+  border: 1px solid #e7d5de;
+  border-radius: 10px;
+  background: #fff;
+  color: #42343c;
+  font: inherit;
+}
+
+.patient-search-input:focus-visible {
+  border-color: #d86f9e;
+}
+
+.patient-view-button {
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.patient-results {
+  margin-top: 24px;
+  overflow-x: auto;
+  border: 1px solid #f3c7d9;
+  border-radius: 12px;
+}
+
+.patient-results table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.patient-results th,
+.patient-results td {
+  padding: 13px 16px;
+  border-bottom: 1px solid #f4e3eb;
+}
+
+.patient-results th {
+  background: #fff4f8;
+  color: #542f41;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.patient-results tr:last-child td {
+  border-bottom: 0;
+}
+
+.search-empty {
+  margin-top: 24px;
+}
+
+.portal-error {
+  margin-top: 16px;
+  color: #a52e53;
+}
+
+.health-record h2 {
+  margin: 0 0 24px;
+  color: #42343c;
+  font-size: 1.5rem;
+}
+
+.health-record-details {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+  padding: 24px;
+  border: 1px solid #f3c7d9;
+  border-radius: 12px;
+  background: #fffafd;
+}
+
+.portal-denied {
+  display: grid;
+  min-height: 100svh;
+  place-content: center;
+  justify-items: center;
+  gap: 16px;
+  padding: 24px;
+  color: #42343c;
+  text-align: center;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  clip-path: inset(50%);
+}
+
+@media (max-width: 680px) {
+  .portal-header-main {
+    flex-wrap: wrap;
+    gap: 8px 18px;
+  }
+
+  .portal-brand {
+    width: calc(100% - 110px);
+  }
+
+  .portal-profile {
+    position: absolute;
+    top: 16px;
+    right: 20px;
+  }
+
+  .portal-tabs {
+    min-height: 40px;
+  }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .portal-button {
+    transition: none;
+  }
+}
